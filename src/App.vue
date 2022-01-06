@@ -55,12 +55,12 @@
       prominent
       src="mountains.png"
       prominent
-      height="170"
+      :height="$route.path === '/' ? '238' : '170'"
   >
     <template v-slot:img="{ props }">
       <v-img
           v-bind="props"
-          gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)"
+          gradient="to top right, rgba(55,236,186,.9), rgba(25,32,72,.9)"
       ></v-img>
     </template>
 
@@ -78,6 +78,9 @@
       <v-row>
        <live-date-time />
       </v-row>
+      <v-row v-if="$route.path === '/'">
+        <field-add-task />
+      </v-row>
     </v-container>
 
   </v-app-bar>
@@ -93,6 +96,7 @@
 import Snackbar from '@/components/Global/Snackbar.vue'
 import Search from '@/components/Tools/Search.vue'
 import LiveDateTime from '@/components/Tools/LiveDateTime.vue'
+import FieldAddTask from './components/Tasks/FieldAddTask.vue'
 
 export default {
   data: () => ({
@@ -108,7 +112,8 @@ export default {
   components: {
     'search': Search,
     'snackbar': Snackbar,
-    'live-date-time': LiveDateTime
+    'live-date-time': LiveDateTime,
+    'field-add-task': FieldAddTask
   }
 }
 </script>
