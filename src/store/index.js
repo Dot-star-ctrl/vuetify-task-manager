@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import { db } from "../firebase/db";
 import Localbase from 'localbase'
 
 let db = new Localbase('db')
@@ -11,26 +10,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     search: null,
-    tasks: [
-      // {
-      //   id: 1,
-      //   title: 'Wake up',
-      //   done: false,
-      //   dueDate: '2022-01-04'
-      // },
-      // {
-      //   id: 2,
-      //   title: 'eat bananas',
-      //   done: false,
-      //   dueDate: '2021-12-29'
-      // },
-      // {
-      //   id: 3,
-      //   title: 'poo bananas',
-      //   done: false,
-      //   dueDate: null
-      // },
-    ],
+    tasks: [],
     snackbar: {
       show: false,
       text: ''

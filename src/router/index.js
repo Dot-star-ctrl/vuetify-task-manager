@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Tasks from '../views/Tasks.vue'
+import goTo from 'vuetify/es5/services/goto'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,10 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   document.title = to.name 
   next()
+})
+
+router.afterEach((to, from) => {
+  goTo(0, {duration: 0 })
 })
 
 export default router

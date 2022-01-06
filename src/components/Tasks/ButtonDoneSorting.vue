@@ -8,12 +8,6 @@
   </v-btn>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="sass">
     .button-done-sorting
       position: fixed
